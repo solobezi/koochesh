@@ -27,10 +27,9 @@
       overflow-x: hidden;
     }
     header {
-      text-align:center;
+      text-align: center;
       padding: 3rem 2rem;
       background: radial-gradient(circle at center, #1c1c1c, #0f0f0f);
-      position: relative;
     }
     header img {
       max-height: 120px;
@@ -104,7 +103,10 @@
       transition: all 0.3s ease;
       width: 100%;
     }
-    button:hover { transform: scale(1.05); background: var(--hover-gold); }
+    button:hover {
+      transform: scale(1.05);
+      background: var(--hover-gold);
+    }
     footer {
       background: #0c0c0c;
       color: #aaa;
@@ -184,21 +186,21 @@
         status.style.color = "orange";
         return;
       }
-
-     fetch("https://script.google.com/macros/s/AKfycbzZQWamgTodoUEOw5B3RkObljMSRSMsJK26i7Ut9IhwHByqpoffeP4Smh00BlsdEDiA/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbzhY8bIGVUPTZk88nvQAu9iMrGCiKayWahVpbHbsMN7xuUuYNaBJTpNX7KfVu3k8NBc0w/exec", {
   method: "POST",
+  mode: "no-cors", // 🔥 این خط مهم‌ترینه
   headers: {
     "Content-Type": "application/json"
   },
   body: JSON.stringify({ name, phone, message })
 })
 .then(() => {
-  status.innerText = "✅ درخواست با موفقیت ارسال شد";
+  status.innerText = "✅ پیام با موفقیت ارسال شد";
   status.style.color = "lightgreen";
   document.getElementById('form').reset();
 })
 .catch(() => {
-  status.innerText = "❌ خطا در ارسال. لطفاً دوباره تلاش کنید.";
+  status.innerText = "❌ ارسال با خطا مواجه شد";
   status.style.color = "red";
 });
 
