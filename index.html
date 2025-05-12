@@ -162,10 +162,10 @@
   <section class="section contact" id="contact">
     <h2>فرم درخواست مشاوره</h2>
     <form id="form">
-      <input type="text" id="name" placeholder="نام شما" required />
-      <input type="text" id="phone" placeholder="شماره تماس (مثلاً 09123456789)" required />
-      <textarea id="message" rows="4" placeholder="پیام شما..." required></textarea>
-      <button type="submit">ارسال درخواست</button>
+      <input type="text" id="name" name="name" placeholder="نام شما" required />
+      <input type="text" id="phone" name="phone" placeholder="شماره تماس (مثلاً 09123456789)" required />
+      <textarea id="message" name="message" rows="4" placeholder="پیام شما..." required></textarea>
+      <button type="submit" id="submitBtn">ارسال درخواست</button>
     </form>
     <div id="status"></div>
   </section>
@@ -179,10 +179,12 @@
   <script>
     document.getElementById('form').addEventListener('submit', function (e) {
       e.preventDefault();
+
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
       const message = document.getElementById('message').value.trim();
       const status = document.getElementById('status');
+      const submitBtn = document.getElementById('submitBtn');
 
       if (!name || !phone || !message) {
         status.innerText = "لطفاً تمام فیلدها را با دقت تکمیل کنید.";
@@ -196,6 +198,12 @@
         status.style.color = "#ffcc00";
         return;
       }
+
+      if (!confirm("آیا اطلاعات واردشده صحیح است؟")) return;
+
+      status.innerText = "⏳ در حال ارسال...";
+      status.style.color = "lightblue";
+      submitBtn.disabled = true;
 
       fetch("https://script.google.com/macros/s/AKfycbyvkPSf8fjbgay2aZj7GxyVzdY3BVenVtt3GZpm2yn48OCDWH_eSPPrw69CRZLWwIurMA/exec", {
         method: "POST",
@@ -213,6 +221,9 @@
       .catch(() => {
         status.innerText = "❌ ارسال با خطا مواجه شد. لطفاً مجدداً تلاش کنید یا با پشتیبانی در ارتباط باشید.";
         status.style.color = "red";
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
       });
     });
   </script>
