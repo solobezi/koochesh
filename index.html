@@ -185,15 +185,15 @@
       const status = document.getElementById('status');
 
       if (!name || !phone || !message) {
-        status.innerText = "لطفاً تمام فیلدها را پر کنید.";
+        status.innerText = "لطفاً تمام فیلدها را با دقت تکمیل کنید.";
         status.style.color = "orange";
         return;
       }
 
       const phoneRegex = /^09\d{9}$/;
       if (!phoneRegex.test(phone)) {
-        status.innerText = "❌ شماره تماس باید با 09 شروع شود و دقیقاً 11 رقم باشد.";
-        status.style.color = "red";
+        status.innerText = "شماره تماس واردشده معتبر نیست. لطفاً شماره‌ای وارد کنید که با 09 شروع شده و 11 رقم باشد.";
+        status.style.color = "#ffcc00";
         return;
       }
 
@@ -206,12 +206,12 @@
         body: JSON.stringify({ name, phone, message })
       })
       .then(() => {
-        status.innerText = "✅ پیام با موفقیت ارسال شد";
+        status.innerText = "✅ پیام شما با موفقیت ارسال شد. از اعتماد شما سپاسگزاریم.";
         status.style.color = "lightgreen";
         document.getElementById('form').reset();
       })
       .catch(() => {
-        status.innerText = "❌ ارسال با خطا مواجه شد";
+        status.innerText = "❌ ارسال با خطا مواجه شد. لطفاً مجدداً تلاش کنید یا با پشتیبانی در ارتباط باشید.";
         status.style.color = "red";
       });
     });
