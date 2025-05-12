@@ -185,17 +185,15 @@
         return;
       }
 
-      const formData = new FormData();
-      formData.append("name", name);
-      formData.append("phone", phone);
-      formData.append("message", message);
-
       fetch("https://script.google.com/macros/s/AKfycbzZQWamgTodoUEOw5B3RkObljMSRSMsJK26i7Ut9IhwHByqpoffeP4Smh00BlsdEDiA/exec", {
         method: "POST",
-        body: formData,
-        mode: "no-cors"
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, phone, message })
       })
-      .then(() => {
+      .then(response => {
+        if (!response.ok) throw new Error();
         status.innerText = "✅ درخواست با موفقیت ارسال شد";
         status.style.color = "lightgreen";
         document.getElementById('form').reset();
