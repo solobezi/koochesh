@@ -187,6 +187,13 @@
         return;
       }
 
+      const phoneRegex = /^09\d{9}$/;
+      if (!phoneRegex.test(phone)) {
+        status.innerText = "❌ شماره تماس باید با 09 شروع شود و 11 رقم باشد.";
+        status.style.color = "red";
+        return;
+      }
+
       fetch("https://script.google.com/macros/s/AKfycbyvkPSf8fjbgay2aZj7GxyVzdY3BVenVtt3GZpm2yn48OCDWH_eSPPrw69CRZLWwIurMA/exec", {
         method: "POST",
         mode: "no-cors",
