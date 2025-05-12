@@ -72,6 +72,13 @@
       text-align: center;
       color: var(--main-gold);
       font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .country-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
     }
     .country-box {
       background: rgba(255,255,255,0.05);
@@ -79,6 +86,8 @@
       border-radius: 20px;
       border: 1px solid rgba(255,255,255,0.1);
       backdrop-filter: blur(6px);
+      flex: 0 1 240px;
+      text-align: center;
     }
     input, textarea {
       width: 100%;
@@ -115,12 +124,6 @@
       font-size: 0.95rem;
       border-top: 1px solid #222;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
   </style>
 </head>
 <body>
@@ -136,7 +139,7 @@
 
   <section class="section" id="countries">
     <h2>کشورهای مقصد</h2>
-    <div class="grid">
+    <div class="country-grid">
       <div class="country-box">
         <h3 style="color: var(--main-gold);">🇮🇹 ایتالیا</h3>
         <p>تحصیل رایگان، زندگی مقرون‌به‌صرفه، بورسیه استانی.</p>
@@ -160,7 +163,7 @@
     <h2>فرم درخواست مشاوره</h2>
     <form id="form">
       <input type="text" id="name" placeholder="نام شما" required />
-      <input type="text" id="phone" placeholder="شماره تماس" required />
+      <input type="text" id="phone" placeholder="شماره تماس (مثلاً 09123456789)" required />
       <textarea id="message" rows="4" placeholder="پیام شما..." required></textarea>
       <button type="submit">ارسال درخواست</button>
     </form>
@@ -189,7 +192,7 @@
 
       const phoneRegex = /^09\d{9}$/;
       if (!phoneRegex.test(phone)) {
-        status.innerText = "❌ شماره تماس باید با 09 شروع شود و 11 رقم باشد.";
+        status.innerText = "❌ شماره تماس باید با 09 شروع شود و دقیقاً 11 رقم باشد.";
         status.style.color = "red";
         return;
       }
