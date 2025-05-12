@@ -186,24 +186,24 @@
         status.style.color = "orange";
         return;
       }
-      fetch("https://script.google.com/macros/s/AKfycbzhY8bIGVUPTZk88nvQAu9iMrGCiKayWahVpbHbsMN7xuUuYNaBJTpNX7KfVu3k8NBc0w/exec", {
-  method: "POST",
-  mode: "no-cors", // 🔥 این خط مهم‌ترینه
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({ name, phone, message })
-})
-.then(() => {
-  status.innerText = "✅ پیام با موفقیت ارسال شد";
-  status.style.color = "lightgreen";
-  document.getElementById('form').reset();
-})
-.catch(() => {
-  status.innerText = "❌ ارسال با خطا مواجه شد";
-  status.style.color = "red";
-});
 
+      fetch("https://script.google.com/macros/s/AKfycbyvkPSf8fjbgay2aZj7GxyVzdY3BVenVtt3GZpm2yn48OCDWH_eSPPrw69CRZLWwIurMA/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, phone, message })
+      })
+      .then(() => {
+        status.innerText = "✅ پیام با موفقیت ارسال شد";
+        status.style.color = "lightgreen";
+        document.getElementById('form').reset();
+      })
+      .catch(() => {
+        status.innerText = "❌ ارسال با خطا مواجه شد";
+        status.style.color = "red";
+      });
     });
   </script>
 </body>
