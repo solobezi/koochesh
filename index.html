@@ -217,14 +217,25 @@
       submitBtn.disabled = true;
 
       fetch("https://script.google.com/macros/s/AKfycbyvkPSf8fjbgay2aZj7GxyVzdY3BVenVtt3GZpm2yn48OCDWH_eSPPrw69CRZLWwIurMA/exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ name, phone, message })
-      })
-      .then(() => {$1document.getElementById('form').reset();
+  method: "POST",
+  mode: "cors",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ name, phone, message })
+})
+.then(response => {
+  if (response.ok) {
+    status.innerText = "✅ پیام شما با موفقیت ارسال شد. از اعتماد شما سپاسگزاریم.";
+    status.style.color = "lightgreen";
+    document.getElementById('form').reset();
+    setTimeout(() => {
+      window.location.href = "https://t.me/koocheshaway";
+    }, 1000);
+  } else {
+    throw new Error("Server response wasn't OK.");
+  }
+})
   setTimeout(() => {
   window.location.href = "https://t.me/koocheshaway";
 }, 1000);
