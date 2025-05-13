@@ -225,7 +225,9 @@
         body: JSON.stringify({ name, phone, message })
       })
       .then(() => {$1document.getElementById('form').reset();
+  setTimeout(() => {
   window.location.href = "https://t.me/koocheshaway";
+}, 1000);
       })
       .catch(() => {
         status.innerText = "❌ ارسال با خطا مواجه شد. لطفاً مجدداً تلاش کنید یا با پشتیبانی در ارتباط باشید.";
