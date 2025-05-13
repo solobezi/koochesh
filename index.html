@@ -139,9 +139,20 @@
   }
   @media (max-width: 600px) {
     footer > div {
-      flex-direction: column-reverse;
+      flex-direction: column;
       align-items: center;
       text-align: center;
+      padding: 2rem 1rem;
+      gap: 1.5rem;
+    }
+    .social-icons {
+      flex-direction: row;
+      justify-content: center;
+      gap: 16px;
+    }
+    .social-icons img {
+      height: 30px;
+      width: 30px;
     }
     .social-icons {
       flex-direction: row;
@@ -197,11 +208,11 @@
       <textarea id="message" name="message" rows="4" placeholder="پیام شما..." required></textarea>
       <button type="submit" id="submitBtn">ارسال درخواست</button>
     </form>
-    <div id="status"></div>
+    <div id="status" style="margin-top: 1rem; font-size: 0.95rem; text-align: center;"></div>
   </section>
 
   <footer>
-  <div style="max-width: 1100px; margin: auto; padding: 2rem 1rem; display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-start; gap: 2rem;">
+  <div style="max-width: 1100px; margin: auto; padding: 2rem 1rem; display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-start; gap: 2rem; line-height: 1.8; font-size: 0.95rem;">
     <div style="display: flex; flex-direction: column; gap: 0.5rem; text-align: right;">
             <p style="font-size: 0.95rem; margin: 0;">تمامی حقوق محفوظ است برای Koochesh Away © 2025</p>
       <p style="font-size: 0.95rem; margin: 0;">شماره تماس: -</p>
@@ -234,7 +245,7 @@
       const phoneRegex = /^09\d{9}$/;
       if (!phoneRegex.test(phone)) {
         status.innerText = "شماره تماس واردشده معتبر نیست. لطفاً شماره‌ای وارد کنید که با 09 شروع شده و 11 رقم باشد.";
-        status.style.color = "#ffcc00";
+        status.style.color = "var(--main-gold)";
         return;
       }
 
