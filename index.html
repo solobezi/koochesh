@@ -35,13 +35,6 @@
       max-height: 120px;
       margin-bottom: 1rem;
     }
-    .tagline {
-      font-size: 1.3rem;
-      color: var(--text-muted);
-      font-weight: 300;
-      line-height: 1.6;
-      margin-top: 0.5rem;
-    }
     .hero {
       display: flex;
       flex-direction: column;
@@ -135,110 +128,138 @@
         max-height: 100px !important;
       }
     }
-  </style>
+    @media (max-width: 600px) {
+    footer div {
+      flex-direction: column;
+      text-align: center;
+    }
+    footer div img {
+      margin: auto;
+    }
+  }
+  @media (max-width: 600px) {
+    footer > div {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    footer div img {
+      margin: auto;
+    }
+  }
+</style>
 </head>
 <body>
-  <header style="text-align: center; padding: 3rem 2rem 1.5rem; background: radial-gradient(circle at center, #1c1c1c, #0f0f0f);">
-  <img src="https://i.ibb.co/hx0PmScj/Koochesh-Away-Transparent-1.png" alt="لوگو" style="max-height: 140px; margin-bottom: 1rem;" />
-</header>
+  <header>
+    <img src="https://i.ibb.co/hx0PmScj/Koochesh-Away-Transparent-1.png" alt="لوگو" />
+  </header>
 
-<section class="hero" style="padding: 4rem 1.5rem;">
-  <h1 style="font-size: 2.2rem; font-weight: 700; color: var(--main-gold); margin-bottom: 1rem;">با خیال راحت مهاجرت کن</h1>
-  <p style="font-size: 1.1rem; opacity: 0.85; line-height: 1.9;">کوچ آغاز ماجراست&nbsp;...</p>
-</section>
+  <section class="hero">
+    <h1>با خیال راحت مهاجرت کن</h1>
+    <p>کوچ آغاز ماجراست ...</p>
+  </section>
 
-<section class="section" id="countries">
-  <h2>کشورهای مقصد</h2>
-  <div class="country-grid">
-    <div class="country-box">
-      <h3 style="color: var(--main-gold);">🇮🇹 ایتالیا</h3>
-      <p>تحصیل رایگان، زندگی مقرون‌به‌صرفه، بورسیه استانی.</p>
+  <section class="section" id="countries">
+    <h2>کشورهای مقصد</h2>
+    <div class="country-grid">
+      <div class="country-box">
+        <h3 style="color: var(--main-gold);">🇮🇹 ایتالیا</h3>
+        <p>تحصیل رایگان، زندگی مقرون‌به‌صرفه، بورسیه استانی.</p>
+      </div>
+      <div class="country-box">
+        <h3 style="color: var(--main-gold);">🇫🇷 فرانسه</h3>
+        <p>آموزش باکیفیت، هزینه پایین‌تر، کار دانشجویی.</p>
+      </div>
+      <div class="country-box">
+        <h3 style="color: var(--main-gold);">🇳🇱 هلند</h3>
+        <p>تحصیل به زبان انگلیسی، بازار کار قوی، مهاجرپذیر.</p>
+      </div>
+      <div class="country-box">
+        <h3 style="color: var(--main-gold);">🇪🇸 اسپانیا</h3>
+        <p>تحصیل در دانشگاه‌های معتبر، زندگی باکیفیت.</p>
+      </div>
     </div>
-    <div class="country-box">
-      <h3 style="color: var(--main-gold);">🇫🇷 فرانسه</h3>
-      <p>آموزش باکیفیت، هزینه پایین‌تر، کار دانشجویی.</p>
+  </section>
+
+  <section class="section contact" id="contact">
+    <h2>فرم درخواست مشاوره</h2>
+    <form id="form">
+      <input type="text" id="name" name="name" placeholder="نام شما" required />
+      <input type="text" id="phone" name="phone" placeholder="شماره تماس (مثلاً 09123456789)" required />
+      <textarea id="message" name="message" rows="4" placeholder="پیام شما..." required></textarea>
+      <button type="submit" id="submitBtn">ارسال درخواست</button>
+    </form>
+    <div id="status"></div>
+  </section>
+
+  <footer>
+  <div style="max-width: 1100px; margin: auto; padding: 2rem 1rem; display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-start; gap: 2rem;">
+    <div style="display: flex; flex-direction: column; gap: 0.5rem; text-align: right;">
+            <p style="font-size: 0.95rem; margin: 0;">تمامی حقوق محفوظ است برای Koochesh Away © 2025</p>
+      <p style="font-size: 0.95rem; margin: 0;">شماره تماس: -</p>
+      <p style="font-size: 0.95rem; margin: 0;">آدرس دفتر: -</p>
     </div>
-    <div class="country-box">
-      <h3 style="color: var(--main-gold);">🇳🇱 هلند</h3>
-      <p>تحصیل به زبان انگلیسی، بازار کار قوی، مهاجرپذیر.</p>
-    </div>
-    <div class="country-box">
-      <h3 style="color: var(--main-gold);">🇪🇸 اسپانیا</h3>
-      <p>تحصیل در دانشگاه‌های معتبر، زندگی باکیفیت.</p>
+    <div style="display: flex; gap: 14px; align-items: center;">
+      <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="height: 28px; width: 28px; filter: invert(100%) sepia(0%) saturate(0%) brightness(200%) contrast(100%);"></a>
+      <a href="#" target="_blank" style="display: inline-block;"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111421.png" alt="Instagram" style="height: 28px; width: 28px; filter: invert(100%) sepia(0%) saturate(0%) brightness(200%) contrast(100%);"></a>
+      <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" style="height: 28px; width: 28px; filter: invert(100%) sepia(0%) saturate(0%) brightness(200%) contrast(100%);"></a>
     </div>
   </div>
-</section>
-
-<section class="section contact" id="contact">
-  <h2>فرم درخواست مشاوره</h2>
-  <form id="form">
-    <input type="text" id="name" name="name" placeholder="نام شما" required />
-    <input type="text" id="phone" name="phone" placeholder="شماره تماس (مثلاً 09123456789)" required />
-    <textarea id="message" name="message" rows="4" placeholder="پیام شما..." required></textarea>
-    <button type="submit" id="submitBtn">ارسال درخواست</button>
-  </form>
-  <div id="status"></div>
-</section>
-
-<footer>
-  <img src="https://i.ibb.co/hx0PmScj/Koochesh-Away-Transparent-1.png" alt="لوگو" style="max-height: 40px; margin-bottom: 1rem;">
-  <p>تمامی حقوق محفوظ است © 2025</p>
-  <p><a href="https://t.me/koochesh_admin" target="_blank" style="color: var(--main-gold); text-decoration: none;">ارتباط در تلگرام</a></p>
 </footer>
 
-<script>
-  document.getElementById('form').addEventListener('submit', function (e) {
-    e.preventDefault();
+  <script>
+    document.getElementById('form').addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const status = document.getElementById('status');
-    const submitBtn = document.getElementById('submitBtn');
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const status = document.getElementById('status');
+      const submitBtn = document.getElementById('submitBtn');
 
-    if (!name || !phone || !message) {
-      status.innerText = "لطفاً تمام فیلدها را با دقت تکمیل کنید.";
-      status.style.color = "orange";
-      return;
-    }
+      if (!name || !phone || !message) {
+        status.innerText = "لطفاً تمام فیلدها را با دقت تکمیل کنید.";
+        status.style.color = "orange";
+        return;
+      }
 
-    const phoneRegex = /^09\d{9}$/;
-    if (!phoneRegex.test(phone)) {
-      status.innerText = "شماره تماس واردشده معتبر نیست. لطفاً شماره‌ای وارد کنید که با 09 شروع شده و 11 رقم باشد.";
-      status.style.color = "#ffcc00";
-      return;
-    }
+      const phoneRegex = /^09\d{9}$/;
+      if (!phoneRegex.test(phone)) {
+        status.innerText = "شماره تماس واردشده معتبر نیست. لطفاً شماره‌ای وارد کنید که با 09 شروع شده و 11 رقم باشد.";
+        status.style.color = "#ffcc00";
+        return;
+      }
 
-    if (!confirm("آیا اطلاعات واردشده صحیح است؟")) return;
+      if (!confirm("آیا اطلاعات واردشده صحیح است؟")) return;
 
-    status.innerText = "⏳ در حال ارسال...";
-    status.style.color = "lightblue";
-    submitBtn.disabled = true;
+      status.innerText = "⏳ در حال ارسال...";
+      status.style.color = "lightblue";
+      submitBtn.disabled = true;
 
-    fetch("https://script.google.com/macros/s/AKfycbyvkPSf8fjbgay2aZj7GxyVzdY3BVenVtt3GZpm2yn48OCDWH_eSPPrw69CRZLWwIurMA/exec", {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ name, phone, message })
-    })
-    .then(() => {
-      status.innerText = "✅ پیام شما ارسال شد.";
-      status.style.color = "lightgreen";
-      document.getElementById('form').reset();
-      setTimeout(() => {
-        window.location.href = "https://t.me/koocheshaway";
-      }, 1000);
-    })
-    .catch(() => {
-      status.innerText = "❌ ارسال با خطا مواجه شد. لطفاً مجدداً تلاش کنید.";
-      status.style.color = "red";
-    })
-    .finally(() => {
-      submitBtn.disabled = false;
+      fetch("https://script.google.com/macros/s/AKfycbyvkPSf8fjbgay2aZj7GxyVzdY3BVenVtt3GZpm2yn48OCDWH_eSPPrw69CRZLWwIurMA/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, phone, message })
+      })
+      .then(() => {
+        status.innerText = "✅ پیام شما ارسال شد.";
+        status.style.color = "lightgreen";
+        document.getElementById('form').reset();
+        setTimeout(() => {
+          window.location.href = "https://t.me/koocheshaway";
+        }, 1000);
+      })
+      .catch(() => {
+        status.innerText = "❌ ارسال با خطا مواجه شد. لطفاً مجدداً تلاش کنید.";
+        status.style.color = "red";
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
