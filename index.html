@@ -224,10 +224,8 @@
         },
         body: JSON.stringify({ name, phone, message })
       })
-      .then(() => {
-        status.innerText = "✅ پیام شما با موفقیت ارسال شد. از اعتماد شما سپاسگزاریم.";
-        status.style.color = "lightgreen";
-        document.getElementById('form').reset();
+      .then(() => {$1document.getElementById('form').reset();
+  window.open("https://t.me/koocheshaway", "_blank");
       })
       .catch(() => {
         status.innerText = "❌ ارسال با خطا مواجه شد. لطفاً مجدداً تلاش کنید یا با پشتیبانی در ارتباط باشید.";
