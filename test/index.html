@@ -28,20 +28,19 @@
     }
     header {
       text-align: center;
-      padding: 3rem 2rem 1.5rem;
+      padding: 3rem 2rem;
       background: radial-gradient(circle at center, #1c1c1c, #0f0f0f);
     }
     header img {
-      max-height: 140px;
+      max-height: 120px;
       margin-bottom: 1rem;
     }
     .tagline {
-      font-size: 1rem;
-      color: var(--main-gold);
-      font-weight: 400;
-      letter-spacing: 0.5px;
-      margin-top: 0;
-      opacity: 0.85;
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.6;
+      margin-top: 0.5rem;
     }
     .hero {
       display: flex;
@@ -49,19 +48,20 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 4rem 1.5rem;
+      padding: 5rem 2rem;
       background: linear-gradient(to right, #1b1b1b, #000);
     }
     .hero h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: var(--main-gold);
       margin-bottom: 1rem;
-      font-weight: 700;
+      font-weight: 800;
     }
     .hero p {
-      font-size: 1.1rem;
-      line-height: 1.9;
-      opacity: 0.85;
+      max-width: 620px;
+      font-size: 1.2rem;
+      line-height: 2;
+      opacity: 0.9;
     }
     .section {
       max-width: 1100px;
@@ -138,37 +138,37 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://i.ibb.co/hx0PmScj/Koochesh-Away-Transparent-1.png" alt="لوگو" />
-    <div class="tagline">با خیال راحت مهاجرت کن</div>
-  </header>
+  <header style="text-align: center; padding: 3rem 2rem 1.5rem; background: radial-gradient(circle at center, #1c1c1c, #0f0f0f);">
+  <img src="https://i.ibb.co/hx0PmScj/Koochesh-Away-Transparent-1.png" alt="لوگو" style="max-height: 140px; margin-bottom: 1rem;" />
+</header>
 
-  <section class="hero">
-    <h1>با خیال راحت مهاجرت کن</h1>
-    <p>کوچ آغاز ماجراست&nbsp;...</p>
-  </section>
+<section class="hero" style="padding: 4rem 1.5rem;">
+  <h1 style="font-size: 2.2rem; font-weight: 700; color: var(--main-gold); margin-bottom: 1rem;">با خیال راحت مهاجرت کن</h1>
+  <p style="font-size: 1.1rem; opacity: 0.85; line-height: 1.9;">کوچ آغاز ماجراست&nbsp;...</p>
+</section>
 
   <section class="section" id="countries">
-    <h2>کشورهای مقصد</h2>
-    <div class="country-grid">
-      <div class="country-box">
-        <h3 style="color: var(--main-gold);">🇮🇹 ایتالیا</h3>
-        <p>تحصیل رایگان، زندگی مقرون‌به‌صرفه، بورسیه استانی.</p>
-      </div>
-      <div class="country-box">
-        <h3 style="color: var(--main-gold);">🇫🇷 فرانسه</h3>
-        <p>آموزش باکیفیت، هزینه پایین‌تر، کار دانشجویی.</p>
-      </div>
-      <div class="country-box">
-        <h3 style="color: var(--main-gold);">🇳🇱 هلند</h3>
-        <p>تحصیل به زبان انگلیسی، بازار کار قوی، مهاجرپذیر.</p>
-      </div>
-      <div class="country-box">
-        <h3 style="color: var(--main-gold);">🇪🇸 اسپانیا</h3>
-        <p>تحصیل در دانشگاه‌های معتبر، زندگی باکیفیت.</p>
-      </div>
+  <h2>کشورهای مقصد</h2>
+  <div class="country-grid">
+    <div class="country-box">
+      <h3 style="color: var(--main-gold);">🇮🇹 ایتالیا</h3>
+      <p>تحصیل رایگان، زندگی مقرون‌به‌صرفه، بورسیه استانی.</p>
     </div>
-  </section>
+    <div class="country-box">
+      <h3 style="color: var(--main-gold);">🇫🇷 فرانسه</h3>
+      <p>آموزش باکیفیت، هزینه پایین‌تر، کار دانشجویی.</p>
+    </div>
+    <div class="country-box">
+      <h3 style="color: var(--main-gold);">🇳🇱 هلند</h3>
+      <p>تحصیل به زبان انگلیسی، بازار کار قوی، مهاجرپذیر.</p>
+    </div>
+    <div class="country-box">
+      <h3 style="color: var(--main-gold);">🇪🇸 اسپانیا</h3>
+      <p>تحصیل در دانشگاه‌های معتبر، زندگی باکیفیت.</p>
+    </div>
+  </div>
+</section>
+
 
   <section class="section contact" id="contact">
     <h2>فرم درخواست مشاوره</h2>

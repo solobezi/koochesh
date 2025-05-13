@@ -124,40 +124,51 @@
       font-size: 0.95rem;
       border-top: 1px solid #222;
     }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.7rem !important;
+      }
+      .hero p {
+        font-size: 1rem !important;
+      }
+      header img {
+        max-height: 100px !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://i.ibb.co/hx0PmScj/Koochesh-Away-Transparent-1.png" alt="لوگو" />
-    <div class="tagline">stay for safe, away for more</div>
-  </header>
+  <header style="text-align: center; padding: 3rem 2rem 1.5rem; background: radial-gradient(circle at center, #1c1c1c, #0f0f0f);">
+  <img src="https://i.ibb.co/hx0PmScj/Koochesh-Away-Transparent-1.png" alt="لوگو" style="max-height: 140px; margin-bottom: 1rem;" />
+</header>
 
-  <section class="hero">
-    <h1>مهاجرت با راهکارهای تخصصی و امن</h1>
-    <p>مسیری مطمئن برای تغییر، رشد و آینده‌ای بهتر</p>
-  </section>
+<section class="hero" style="padding: 4rem 1.5rem;">
+  <h1 style="font-size: 2.2rem; font-weight: 700; color: var(--main-gold); margin-bottom: 1rem;">با خیال راحت مهاجرت کن</h1>
+  <p style="font-size: 1.1rem; opacity: 0.85; line-height: 1.9;">کوچ آغاز ماجراست&nbsp;...</p>
+</section>
 
   <section class="section" id="countries">
-    <h2>کشورهای مقصد</h2>
-    <div class="country-grid">
-      <div class="country-box">
-        <h3 style="color: var(--main-gold);">🇮🇹 ایتالیا</h3>
-        <p>تحصیل رایگان، زندگی مقرون‌به‌صرفه، بورسیه استانی.</p>
-      </div>
-      <div class="country-box">
-        <h3 style="color: var(--main-gold);">🇫🇷 فرانسه</h3>
-        <p>آموزش باکیفیت، هزینه پایین‌تر، کار دانشجویی.</p>
-      </div>
-      <div class="country-box">
-        <h3 style="color: var(--main-gold);">🇳🇱 هلند</h3>
-        <p>تحصیل به زبان انگلیسی، بازار کار قوی، مهاجرپذیر.</p>
-      </div>
-      <div class="country-box">
-        <h3 style="color: var(--main-gold);">🇪🇸 اسپانیا</h3>
-        <p>تحصیل در دانشگاه‌های معتبر، زندگی باکیفیت.</p>
-      </div>
+  <h2>کشورهای مقصد</h2>
+  <div class="country-grid">
+    <div class="country-box">
+      <h3 style="color: var(--main-gold);">🇮🇹 ایتالیا</h3>
+      <p>تحصیل رایگان، زندگی مقرون‌به‌صرفه، بورسیه استانی.</p>
     </div>
-  </section>
+    <div class="country-box">
+      <h3 style="color: var(--main-gold);">🇫🇷 فرانسه</h3>
+      <p>آموزش باکیفیت، هزینه پایین‌تر، کار دانشجویی.</p>
+    </div>
+    <div class="country-box">
+      <h3 style="color: var(--main-gold);">🇳🇱 هلند</h3>
+      <p>تحصیل به زبان انگلیسی، بازار کار قوی، مهاجرپذیر.</p>
+    </div>
+    <div class="country-box">
+      <h3 style="color: var(--main-gold);">🇪🇸 اسپانیا</h3>
+      <p>تحصیل در دانشگاه‌های معتبر، زندگی باکیفیت.</p>
+    </div>
+  </div>
+</section>
+
 
   <section class="section contact" id="contact">
     <h2>فرم درخواست مشاوره</h2>
